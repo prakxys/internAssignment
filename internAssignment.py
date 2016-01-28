@@ -4,10 +4,10 @@
 #extra credit - change every occurence of "the" to "_the_"
 
 import os, re
-from tkinter.filedialog import askopenfilename
+import tkFileDialog
 
 #Select any text document
-filename = askopenfilename()
+filename = tkFileDialog.askopenfilename()
 
 #Identify and count "the"
 filename1 = open(filename,"r").read().lower()
@@ -34,3 +34,4 @@ changeWord = open(filename +"New.txt","w")
 theReplace = re.sub(r"(?<!\w)the(?!\w)", "_the_", filename1)
 changeWord.write(theReplace)
 changeWord.close()
+print(filename +"New.txt added to your current directory")
